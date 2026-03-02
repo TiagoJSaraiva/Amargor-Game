@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgfx2e30q58cc"]
+
+[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://gnbsdw15bb6c" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://cgrwbieloqk3k" path="res://player/attack/player_attack.tscn" id="2_g1dw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
+size = Vector2(90, 180)
+
+[node name="Player" type="CharacterBody2D" unique_id=1621302815]
+script = ExtResource("1_rkbax")
+max_health = null
+max_mana = null
+attack_scene = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087368401]
+shape = SubResource("RectangleShape2D_rkbax")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634589776]
+scale = Vector2(0.67909026, 1.4280853)
+texture = ExtResource("1_oul6g")
