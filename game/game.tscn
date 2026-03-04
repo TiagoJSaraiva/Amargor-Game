@@ -8,5 +8,5 @@
 [node name="BaseFloor" parent="." unique_id=1101987449 instance=ExtResource("1_l1rk1")]
 position = Vector2(596, 598)
 
-[node name="Player" parent="." unique_id=1621302815 instance=ExtResource("2_vasa2")]
-position = Vector2(562, 308)
+[node name="Player" parent="." unique_id=363395549 instance=ExtResource("2_vasa2")]
+position = Vector2(576, 340)
