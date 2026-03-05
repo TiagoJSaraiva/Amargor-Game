@@ -16,7 +16,7 @@
 ### Constantes
 - `SNAKE_CASE` (letras maiúsculas)
 
-### Classes e Nós
+### Classes, Nós e Enum
 - `PascalCase`
 
 ---

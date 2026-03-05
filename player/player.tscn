@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://cgfx2e30q58cc"]
 
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_oul6g"]
-[ext_resource type="Script" uid="uid://j7gyl3hkkv0c" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://gnbsdw15bb6c" path="res://player/player_movement.gd" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://gnbsdw15bb6c" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://cgrwbieloqk3k" path="res://player/attack/player_attack.tscn" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://d3l3wktoaaj32" path="res://player/attack_rotation.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(60, 120)
 
 [node name="Player" type="CharacterBody2D" unique_id=363395549]
-script = ExtResource("2_rkbax")
+script = ExtResource("1_rkbax")
+attack_slash = ExtResource("2_yw30f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1567755114]
 shape = SubResource("RectangleShape2D_oul6g")
@@ -21,21 +22,8 @@ script = ExtResource("4_yw30f")
 scale = Vector2(-0.48000002, 0.95454544)
 texture = ExtResource("1_oul6g")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Visual" unique_id=1929991330]
-position = Vector2(-28.000008, 0)
-scale = Vector2(0.30244085, 0.5155666)
-texture = ExtResource("1_oul6g")
-
 [node name="AttackOrigin" type="Node2D" parent="." unique_id=1642177508]
 script = ExtResource("4_yw30f")
 
 [node name="Marker2D" type="Marker2D" parent="AttackOrigin" unique_id=1929232890]
 position = Vector2(55, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="AttackOrigin" unique_id=1154005070]
-position = Vector2(58, 0)
-scale = Vector2(0.27999938, 0.32000077)
-texture = ExtResource("1_oul6g")
-
-[node name="PlayerSystem" type="Node" parent="." unique_id=1665740546]
-script = ExtResource("1_rkbax")
