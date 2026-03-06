@@ -1,26 +1,109 @@
 [gd_scene format=3 uid="uid://cgfx2e30q58cc"]
 
-[ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://gnbsdw15bb6c" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://cgrwbieloqk3k" path="res://player/attack/player_attack.tscn" id="2_yw30f"]
+[ext_resource type="Script" uid="uid://s2qph4kvuxn5" path="res://player/visual.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://d3l3wktoaaj32" path="res://player/attack_rotation.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
 size = Vector2(60, 120)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"crouch_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch_attack_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch_shoot",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"crouch_walk",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stand_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stand_attack_up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stand_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stand_shooting",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stand_walk",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=363395549]
 script = ExtResource("1_rkbax")
 attack_slash = ExtResource("2_yw30f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1567755114]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1567755114]
 shape = SubResource("RectangleShape2D_oul6g")
 
 [node name="Visual" type="Node2D" parent="." unique_id=465395975]
-script = ExtResource("4_yw30f")
+script = ExtResource("3_yw30f")
 
-[node name="Sprite2D" type="Sprite2D" parent="Visual" unique_id=402160134]
-scale = Vector2(-0.48000002, 0.95454544)
-texture = ExtResource("1_oul6g")
+[node name="Sprite" type="AnimatedSprite2D" parent="Visual" unique_id=1561182682]
+sprite_frames = SubResource("SpriteFrames_g1dw6")
+animation = &"new_animation"
 
 [node name="AttackOrigin" type="Node2D" parent="." unique_id=1642177508]
 script = ExtResource("4_yw30f")
