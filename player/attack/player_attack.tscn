@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cgrwbieloqk3k"]
 
+[ext_resource type="Script" uid="uid://2f6t05v3qdtk" path="res://player/attack/player_attack.gd" id="1_b0ypp"]
 [ext_resource type="Texture2D" uid="uid://c75jrp57x4wfs" path="res://icon.svg" id="1_h3lox"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ehfd"]
 size = Vector2(100, 45)
 
 [node name="PlayerAttack" type="Area2D" unique_id=1246002123]
+script = ExtResource("1_b0ypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411270519]
 shape = SubResource("RectangleShape2D_5ehfd")
